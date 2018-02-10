@@ -399,19 +399,6 @@ void UKF::UpdateRadar(MeasurementPackage meas_package) {
     //set measurement dimension, radar can measure r, phi, and r_dot
     int n_z = 3;
 
-
-
-    //set vector for weights
-    //VectorXd weights = VectorXd(2 * n_aug_ + 1);
-    //double weight_0 = lambda_/(lambda_ + n_aug_);
-    //weights(0) = weight_0;
-
-    /*for (int i=1; i<2 * n_aug_ + 1; i++) {
-        double weight = 0.5 / (n_aug_ + lambda_);
-        weights_(i) = weight;
-    }*/
-
-
     //create matrix for sigma points in measurement space
     MatrixXd Zsig = MatrixXd(n_z,2 * n_aug_ + 1);
 
